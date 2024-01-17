@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Products(
 
 );
 
-CREATE TABLE IF NOT EXISTS order_items (
+CREATE TABLE IF NOT EXISTS Order_items (
     order_item_id TEXT PRIMARY KEY,
     FOREIGN KEY (order_id) REFERENCES Order(order_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id),
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS Geolocalisation (
     geolocation_state TEXT
 );
 
-CREATE TABLE IF NOT EXISTS customers_table (
+CREATE TABLE IF NOT EXISTS Customer(
     customer id TEXT PRIMARY KEY,
     customer_uniq_id TEXT FOREIGN KEY,
     order_status TEXT,
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS Order(
 
 );
 
-CREATE TABLE IF NOT EXISTS Reviews (
+CREATE TABLE IF NOT EXISTS Reviews(
     review_id TEXT PRIMARY KEY,
     FOREIGN KEY (order_id) REFERENCES Order(order_id),
     review_score INTEGER,
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS Payments(
 
 );
 
-CREATE TABLE IF NOT EXISTS State_Name (
+CREATE TABLE IF NOT EXISTS State_Name(
     id_state TEXT PRIMARY KEY,
     state_name TEXT
      
